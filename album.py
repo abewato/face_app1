@@ -11,7 +11,9 @@ def predict(img):
     # ネットワークの準備
     net = Net().cpu().eval()
     # 学習済みモデルの重み（face_res18.pt）を読み込むt
-    net.load_state_dict(torch.load('code/face_res18.pt', map_location=torch.device('cpu')))
+    # net.load_state_dict(torch.load('code/face_res18.pt', map_location=torch.device('cpu')))
+    # Renderへデプロイする際は、'./face_res18.pt'とする。
+    net.load_state_dict(torch.load('./face_res18.pt', map_location=torch.device('cpu')))
     # データの前処理
     img = transform(img)
     img = img.unsqueeze(0) # 1次元増やす
