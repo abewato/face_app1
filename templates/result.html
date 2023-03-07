@@ -1,0 +1,10 @@
+<title>Family Predict App</title>
+{% if familyName %}
+    <h1>これは{{ familyName }} です</h1>
+    <div>
+        <img src="{{ image }}">
+    </div>
+    <a href="./">トップへ戻る</a>
+{% else %}
+    <a href="./">トップへ戻る</a>
+{% endif %}
